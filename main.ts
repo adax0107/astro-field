@@ -55,7 +55,7 @@ spaceship = sprites.create(img`
 controller.moveSprite(spaceship, 100, 100)
 spaceship.y = scene.screenHeight() - 10
 spaceship.setFlag(SpriteFlag.StayInScreen, true)
-game.onUpdateInterval(1000, function () {
+game.onUpdateInterval(500, function () {
     astroid = sprites.create(img`
         . . . . . . . . . c c 8 . . . . 
         . . . . . . 8 c c c f 8 c c . . 
