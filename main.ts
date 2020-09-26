@@ -55,7 +55,7 @@ spaceship = sprites.create(img`
 controller.moveSprite(spaceship, 100, 100)
 spaceship.y = scene.screenHeight() - 10
 spaceship.setFlag(SpriteFlag.StayInScreen, true)
-game.onUpdateInterval(500, function () {
+game.onUpdateInterval(1000, function () {
     astroid = sprites.create(img`
         . . . . . . . . . c c 8 . . . . 
         . . . . . . 8 c c c f 8 c c . . 
@@ -77,7 +77,7 @@ game.onUpdateInterval(500, function () {
     astroid.y = 0
     astroid.x = randint(0, scene.screenWidth())
     astroid.ay = 100
-    if (info.score() == 10) {
-        astroid.ay = 150
+    if (info.score() > 15) {
+        astroid.ay = 200
     }
 })
