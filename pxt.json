@@ -2,7 +2,9 @@
     "name": "astro-field",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "animation": "*",
+        "color": "*"
     },
     "files": [
         "main.blocks",
