@@ -205,8 +205,8 @@ function laser_beam () {
         33333
         33333
         `, SpriteKind.beam)
-    laser.follow(big_boss)
     laser.z = -1
+    laser.follow(big_boss, 100)
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(img`
@@ -226,7 +226,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . 6 6 8 8 8 8 6 6 . . . . 
         . . . . . . 6 6 6 6 . . . . . . 
         . . . . . . . . . . . . . . . . 
-        `, spaceship, 0, -70)
+        `, spaceship, 0, -100)
 })
 sprites.onOverlap(SpriteKind.beam, SpriteKind.Player, function (sprite, otherSprite) {
     game.over(false, effects.splatter)
@@ -348,8 +348,8 @@ spaceship = sprites.create(img`
     c c c c c c e e 2 2 2 4 2 2 e e 
     c c c c c c e e 2 2 2 2 4 2 e e 
     `, SpriteKind.Player)
-controller.moveSprite(spaceship, 100, 100)
 spaceship.y = scene.screenHeight() - 10
+controller.moveSprite(spaceship, 50, 50)
 spaceship.setFlag(SpriteFlag.StayInScreen, true)
 game.onUpdate(function () {
     if (big_boss.top > 0) {
